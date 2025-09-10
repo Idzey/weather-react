@@ -1,0 +1,25 @@
+{
+    "home": {
+            "actions": {
+                "searchPlaceholder": "Search for a city...",
+                "darkMode": "Dark Mode",
+                "lightMode": "Light Mode",
+                "currentLocation": "Current Location",
+                "noResultsFound": "No results found"
+            },
+            "weather": {
+                "feelsLike": "Feels like",
+                "sunrise": "Sunrise",
+                "sunset": "Sunset",
+                "windSpeed": "Wind Speed",
+                "humidity": "Humidity",
+                "pressure": "Pressure",
+                "precipitation": "Precipitation",
+                "speed": "km/h",
+                "length": "mm",
+                "humidityPercent": "hPa"
+            },
+            "daysForecastTitle": "3-Day Forecast",
+            "hourForecastTitle": "Hourly Forecast"
+        }
+}

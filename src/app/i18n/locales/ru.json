@@ -1,0 +1,25 @@
+{
+    "home": {
+            "actions": {
+                "searchPlaceholder": "Найти город...",
+                "darkMode": "Темный режим",
+                "lightMode": "Светлый режим",
+                "currentLocation": "Текущее местоположение",
+                "noResultsFound": "Результаты не найдены"
+            },
+            "weather": {
+                "feelsLike": "Ощущается как",
+                "sunrise": "Восход",
+                "sunset": "Закат",
+                "windSpeed": "Скорость ветра",
+                "humidity": "Влажность",
+                "pressure": "Давление",
+                "precipitation": "Осадки",
+                "speed": "км/ч",
+                "length": "мм",
+                "humidityPercent": "мм рт. ст."
+            },
+            "daysForecastTitle": "3-дневный прогноз",
+            "hourForecastTitle": "Почасовой прогноз"
+        }
+}
