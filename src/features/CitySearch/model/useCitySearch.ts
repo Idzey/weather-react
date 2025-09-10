@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useFindCityQuery } from "../../../entities/weather/api/weatherApi";
-import { useAppDispatch } from "../../../shared/hooks/redux";
 import { setCity } from "../../../shared/model/locationSlice";
+import { useAppDispatch } from "../../../shared/lib/hooks/redux";
 
 export function useCitySearch() {
   const [value, setValue] = useState("");

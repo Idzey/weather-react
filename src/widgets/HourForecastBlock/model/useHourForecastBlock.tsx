@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useAppSelector } from "../../../shared/hooks/redux";
 import { useGetForecastQuery } from "../../../entities/weather/api/weatherApi";
+import { useAppSelector } from "../../../shared/lib/hooks/redux";
 
 export function useHourForecastBlock() {
   const city = useAppSelector((state) => state.location.city);

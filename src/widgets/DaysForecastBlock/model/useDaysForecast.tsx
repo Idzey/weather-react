@@ -1,5 +1,5 @@
 import { useGetForecastQuery } from "../../../entities/weather/api/weatherApi";
-import { useAppSelector } from "../../../shared/hooks/redux";
+import { useAppSelector } from "../../../shared/lib/hooks/redux";
 
 export function useDaysForecast() {
   const city = useAppSelector((state) => state.location.city);

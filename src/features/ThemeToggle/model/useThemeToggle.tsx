@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../shared/hooks/redux";
 import { setTheme } from "../../../shared/model/settingsSlice";
+import { useAppDispatch, useAppSelector } from "../../../shared/lib/hooks/redux";
 
 export function useThemeToggle() {
   const dispatch = useAppDispatch();

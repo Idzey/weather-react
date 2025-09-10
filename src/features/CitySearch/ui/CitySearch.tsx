@@ -8,14 +8,9 @@ export default function CitySearch() {
   const {
     value,
     setValue,
-    isTyping,
-    setIsTyping,
     showResults,
-    isFocused,
     setIsFocused,
     cities,
-    isLoading,
-    isError,
     searchRef,
     handleChangeCity,
   } = useCitySearch();

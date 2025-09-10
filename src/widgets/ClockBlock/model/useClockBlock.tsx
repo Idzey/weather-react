@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useAppSelector } from "../../../shared/hooks/redux";
 import dayjs from "../../../shared/date/dayjs";
 import { useGetCurrentWeatherQuery } from "../../../entities/weather/api/weatherApi";
+import { useAppSelector } from "../../../shared/lib/hooks/redux";
 
 export function useClockBlock() {
   const city = useAppSelector((state) => state.location.city);

@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch, useAppSelector } from "../../../shared/hooks/redux";
 import { setLang } from "../../../shared/model/settingsSlice";
 import dayjs from "../../../shared/date/dayjs";
+import { useAppDispatch, useAppSelector } from "../../../shared/lib/hooks/redux";
 
 export function useLanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
