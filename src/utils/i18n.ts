@@ -12,6 +12,7 @@ i18n.use(initReactI18next)
             actions: {
                 searchPlaceholder: "Search for a city...",
                 darkMode: "Dark Mode",
+                lightMode: "Light Mode",
                 currentLocation: "Current Location",
                 noResultsFound: "No results found"
             },
@@ -38,6 +39,7 @@ i18n.use(initReactI18next)
             actions: {
                 searchPlaceholder: "Найти город...",
                 darkMode: "Темный режим",
+                lightMode: "Светлый режим",
                 currentLocation: "Текущее местоположение",
                 noResultsFound: "Результаты не найдены"
             },

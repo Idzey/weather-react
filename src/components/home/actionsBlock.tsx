@@ -59,9 +59,9 @@ export default function ActionsBlock() {
 
   return (
     <div className="flex items-center justify-center gap-4 md:gap-20">
-      <div className="flex flex-col items-center gap-2 text-secondary font-extrabold">
+      <div className="hidden lg:flex flex-col items-center gap-2 text-secondary font-extrabold">
         <Switch value={isDarkMode} onChange={handleSetTheme} />
-        <p className="whitespace-nowrap">{t("home.actions.darkMode")}</p>
+        <p className="whitespace-nowrap">{isDarkMode ? t("home.actions.darkMode") : t("home.actions.lightMode")}</p>
       </div>
       <SearchBlock />
       <Button
@@ -73,7 +73,9 @@ export default function ActionsBlock() {
           {t("home.actions.currentLocation")}
         </p>
       </Button>
-      <SelectLanguage />
+      <div className="hidden lg:block">
+        <SelectLanguage />
+      </div>
     </div>
   );
 }
