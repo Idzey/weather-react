@@ -1,69 +1,70 @@
-# React + TypeScript + Vite
+# 🌦️ Weather React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Интерактивное приложение прогноза погоды, созданное на **React + TypeScript** с использованием **Redux Toolkit**, **Redux Query** и **Geolocation API**. Архитектура построена на принципах **Feature-Sliced Design (FSD)** для масштабируемости и удобства поддержки.
 
-Currently, two official plugins are available:
+## ✨ Возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Работа с API от weatherapi.com
+- Определение текущего местоположения через **Geolocation API**  
+- Получение прогноза погоды с внешнего API  
+- Отображение текущей температуры, влажности, скорости ветра и других параметров  
+- Поддержка нескольких городов (поиск)  
+- Чистая модульная архитектура по принципам **FSD**
+- Поддержка выбора языка (i18n)  
+- Тёмная / светлая тема  
 
-## Expanding the ESLint configuration
+## 🛠️ Стек технологий
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 18** + **TypeScript**  
+- **Redux Toolkit (RTK)**  
+- **Redux Query** для работы с API  
+- **Geolocation API** (определение позиции пользователя)  
+- **Feature-Sliced Design** (структурирование проекта)  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📂 Архитектура (FSD)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+src/
+ ├── app/          # Инициализация приложения
+ ├── pages/        # Страницы
+ ├── features/     # Фичи (CitySearch, LocationDetector и др.)
+ ├── entities/     # Сущности (City, Weather)
+ ├── shared/       # Переиспользуемые компоненты, utils, libs
+ ├── widgetes/     # Виджеты (крупные UI-блоки, собирающие данные из features/entities и отображающие их)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Установка и запуск
+
+### .env
+```env
+VITE_WEATHER_API_KEY=API_KEY
+VITE_WEATHER_API_URL=http://api.weatherapi.com/v1
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Запуск
+```bash
+# Клонируем репозиторий
+git clone https://github.com/Idzey/weather-react.git
+cd weather-react
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Устанавливаем зависимости
+npm install
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Запускаем в режиме разработки
+npm run dev
+
+# Сборка продакшн-версии
+npm run build
 ```
+
+## 🔮 Планы по развитию
+
+- [ ] История поиска городов  
+- [ ] Unit и e2e тесты  
+
+## 📸 Скриншоты
+
+### Главный экран
+![Главный экран](./public/screenshots/main.png)
+![Светлый режим с русской локализацией](./public/screenshots/russian-light.png)
+
+### Поиск города
+![Поиск](./public/screenshots/search-city.png)
