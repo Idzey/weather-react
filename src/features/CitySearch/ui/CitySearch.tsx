@@ -1,18 +1,20 @@
-import { useTranslation } from "react-i18next";
 import { useCitySearch } from "../model/useCitySearch";
 import { Search } from "lucide-react";
 import Input from "../../../shared/ui/input";
 
 export default function CitySearch() {
-  const { t } = useTranslation();
   const {
     value,
     setValue,
-    showResults,
     setIsFocused,
-    cities,
     searchRef,
+    t,
+    cities,
+    isLoading,
+    isTyping,
+    showResults,
     handleChangeCity,
+    isFocused
   } = useCitySearch();
 
   return (
@@ -31,7 +33,51 @@ export default function CitySearch() {
         />
       </div>
 
-      {showResults && (
+      <ResultsBlock 
+        cities={cities || []}
+        isLoading={isLoading}
+        isTyping={isTyping}
+        showResults={showResults}
+        handleChangeCity={handleChangeCity}
+        t={t}
+        isFocused={isFocused}
+      />
+    </div>
+  );
+}
+
+function ResultsBlock({
+  cities,
+  isLoading,
+  isTyping,
+  showResults,
+  handleChangeCity,
+  t,
+  isFocused
+}: {
+  cities: { name: string; country: string }[];
+  isLoading: boolean;
+  isTyping: boolean;
+  showResults: boolean;
+  handleChangeCity: (city: string) => void;
+  t: (key: string) => string;
+  isFocused: boolean;
+}) {
+  if (isLoading || isTyping) {
+    return (
+      <div className="absolute top-1/2 p-10 left-0 w-full bg-card shadow-lg rounded-b-lg z-10">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <ul key={index} className="flex flex-col gap-4 text-xl mt-4">
+            <CityItemSkeleton />
+          </ul>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {isFocused && showResults && (
         <div className="absolute top-1/2 p-10 left-0 w-full bg-card shadow-lg rounded-b-lg z-10">
           {Array.isArray(cities) && cities.length > 0 ? (
             <ul className="flex flex-col gap-4 text-xl mt-4">
@@ -51,7 +97,7 @@ export default function CitySearch() {
           )}
         </div>
       )}
-    </div>
+    </>
   );
 }
 
@@ -72,4 +118,8 @@ function CityItem({
       {name}, {country}
     </li>
   );
+}
+
+function CityItemSkeleton() {
+  return <li className="h-6 w-1/2 bg-secondary/20 rounded animate-pulse"></li>;
 }
